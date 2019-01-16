@@ -10,3 +10,7 @@ A simple deployment ready webpack-react application for heroku
 ## Verify production code
 1. Run `webpack -p`
 2. Run `node server.js`, and visit **localhost:8080**, voila your code is ready for heroku now.
+
+
+## Destory Heroku CLI command
+heroku apps:destory [appname]
