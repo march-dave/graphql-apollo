@@ -10,7 +10,6 @@ const app = express();
 import db from "./db";
 import Query from "./resolvers/Query";
 import User from "./resolvers/User";
-import GetGetGet from "./resolvers/GetGetGet";
 
 import Mutation from './resolvers/Mutation'
 import Subscription from './resolvers/Subscription'
