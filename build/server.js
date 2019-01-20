@@ -56,9 +56,8 @@ var pubSub = new _apolloServerExpress.PubSub();
 var server = new _apolloServerExpress.ApolloServer({
   typeDefs: _schema2.default,
   resolvers: {
-    Query: _Query2.default,
-    GetGetGet: GetGetGet,
-    Mutation: _Mutation2.default
+    Query: _Query2.default
+    // Mutation,
     // Subscription,
     // User,
     // Post,

@@ -1,4 +1,4 @@
-import { gql } from "graphql-tag";
+import { gql } from "apollo-boost";
 
 const schema = gql`
 
@@ -8,7 +8,6 @@ type Query {
     getUser: [Users]
     getAuthor(id: Int): Author
     me: Users!
-    # getget: : Users!
  }
 
 type RoomType {

@@ -26,8 +26,7 @@ const server = new ApolloServer({
   typeDefs: schema,
   resolvers: {
     Query,
-    GetGetGet,
-    Mutation,
+    // Mutation,
     // Subscription,
     // User,
     // Post,
