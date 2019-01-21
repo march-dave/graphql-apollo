@@ -33,9 +33,9 @@ const server = new ApolloServer({
     // Comment
   },
 
-  // context: ( {req, res} ) => ({
-  //   toke: req.headers['auth-token']
-  // }),
+  context: ( {req, res} ) => ({
+    toke: req.headers['auth-token']
+  }),
 
   introspection: true,
   playground: true,
