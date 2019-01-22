@@ -40,6 +40,8 @@ var _apolloServerExpress = require("apollo-server-express");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var port = process.env.PORT || 8080;
 var app = (0, _express2.default)();
 
@@ -53,7 +55,7 @@ var app = (0, _express2.default)();
 
 var pubSub = new _apolloServerExpress.PubSub();
 
-var server = new _apolloServerExpress.ApolloServer({
+var server = new _apolloServerExpress.ApolloServer(_defineProperty({
   typeDefs: _schema2.default,
   resolvers: {
     Query: _Query2.default
@@ -64,17 +66,20 @@ var server = new _apolloServerExpress.ApolloServer({
     // Comment
   },
 
-  // context: ( {req, res} ) => ({
-  //   toke: req.headers['auth-token']
-  // }),
+  context: function context(_ref) {
+    var req = _ref.req,
+        res = _ref.res;
+    return {
+      toke: req.headers['auth-token']
+    };
+  },
 
   introspection: true,
-  playground: true,
-  context: {
-    db: _db2.default,
-    pubSub: pubSub
-  }
-});
+  playground: true
+}, "context", {
+  db: _db2.default,
+  pubSub: pubSub
+}));
 
 server.applyMiddleware({ app: app });
 
