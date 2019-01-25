@@ -2,10 +2,10 @@ import express from "express";
 const port = process.env.PORT || 8080;
 const app = express();
 
-// import bodyParser from "body-parser";
-// import cors from "cors";
-// import jwt from "jsonwebtoken";
-// import bcrypt from "bcryptjs";
+import bodyParser from "body-parser";
+import cors from "cors";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 import db from "./db";
 import Query from "./resolvers/Query";
